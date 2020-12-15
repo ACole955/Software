@@ -1,0 +1,26 @@
+function rot13(str) {
+  let input = str.toUpperCase();
+  let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let punct = " ,.+-*/£!?$%^&()"
+  let decode = "";
+
+
+  for (let i=0;i<input.length;i++){
+    for (let j=0;j<alphabet.length;j++){
+      if(input[i] == alphabet[j]){
+        if (j < 13){
+          j += 26
+        }
+        decode += alphabet[j-13];
+      }
+      else if
+      (input[i] == punct[j]){
+        decode += punct[j]
+      }
+    }
+  }
+
+  str = decode
+  console.log(str);
+  return str;
+}
