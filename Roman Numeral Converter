@@ -1,0 +1,22 @@
+function convertToRoman(num) {
+//arrays of roman numerals
+    let numerals = 
+    [['I','II','III','IV','V','VI','VII','VIII','IX'],
+    ['X','XX','XXX','XL','L','LX','LXX','LXXX','XC'],
+    ['C','CC','CCC','CD','D','DC','DCC','DCCC','CM'],
+    ['M','MM','MMM']]
+
+//split num into single digits
+    let numArr = Array.from(num.toString()).map(Number)
+//set numeral array to empty
+    let output = ""    
+    for(let i=numArr.length;i>0;i--){
+        let tier = i - 1
+        let roNu = (numerals[tier][numArr[numArr.length - i]-1])
+        if (roNu){
+        output += roNu
+        }
+    }
+    console.log(output)
+    return output
+}
